@@ -1,0 +1,46 @@
+﻿@model IEnumerable<FootBallBootStrap.Models.FootBallBootStrap>
+@{
+    ViewBag.Title = "Home Page";
+
+}
+<br />
+
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="10">No Record's found.</td>
+            </tr>
+
+        }
+        else
+        {
+            <thead>
+                <tr class="danger">
+                    <th data-defaultsign="_19">MatchID </th>
+                    <th data-defaultsign="AZ">TeamName1</th>
+
+                    <th data-defaultsign="AZ">TeamName2</th>
+                    <th data-firstsort="AZ">Status</th>
+                    <th data-defaultsign="AZ">WinningTeam</th>
+                    <th data-defaultsign="_19">Points</th>
+
+                </tr>
+            </thead>
+
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MatchID</td>
+                    <td>@item.TeamName1</td>
+                    <td>@item.TeamName2</td>
+                    <td>@item.Status</td>
+                    <td>@item.WinningTeam</td>
+                    <td>@item.Points</td>
+                </tr>
+
+            }
+        }
+    </table>
+</div> 
